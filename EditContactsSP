@@ -1,0 +1,20 @@
+CREATE PROCEDURE `EditContacts`(
+    IN p_id INT,
+    IN p_firstname VARCHAR(100),
+    IN p_lastname VARCHAR(100),
+    IN p_birthdate DATE,
+    IN p_workphone VARCHAR(20),
+    IN p_homephone VARCHAR(20),
+    IN p_email VARCHAR(255)
+)
+BEGIN
+    UPDATE contacts
+    SET 
+        firstname = p_firstname,
+        lastname = p_lastname,
+        birthdate = p_birthdate,
+        workphone = p_workphone,
+        homephone = p_homephone,
+        email = p_email
+    WHERE id = p_id;
+END
